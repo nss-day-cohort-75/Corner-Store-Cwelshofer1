@@ -1,17 +1,14 @@
-namespace CornerStore.Models;
+namespace CornerStore.Models.DTO;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-public class Cashier
+public class CashierDTO
 {
-    [Key]
-    public int Id { get; set; }
-    [Required]
-    public string FirstName { get; set; }
-    [Required]
-    public string LastName { get; set; }
-    [NotMapped]
-    public string FullName => $"{FirstName} {LastName}";
 
-    public List<Order> Orders { get; set; }
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public string FullName => $"{FirstName} {LastName}";
+    public List<OrderDTO> Orders { get; set; }
+
 }
