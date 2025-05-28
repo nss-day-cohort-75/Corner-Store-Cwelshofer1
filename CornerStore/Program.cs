@@ -322,3 +322,5 @@ app.MapPost("/orders", (CornerStoreDbContext db, OrderDTO newOrderDTO) =>
 
 app.Run();
 
+//don't move or change this!
+public partial class Program { }
