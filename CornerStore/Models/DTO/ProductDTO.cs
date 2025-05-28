@@ -1,24 +1,16 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using CornerStore.Models.DTO;
 namespace CornerStore.Models;
 
-public class Product
+public class ProductDTO
 {
-    [Key]
     public int Id { get; set; }
-    [Required]
     public string ProductName { get; set; }
-    [Required]
     public decimal Price { get; set; }
-    [Required]
     public string Brand { get; set; }
-    [Required]
     public int CategoryId { get; set; }
-    [ForeignKey("CategoryId")]
-    public Category Category { get; set; }
-    [NotMapped]
-    public Cashier Cashier { get; set; }
-    
-    
-     
+    public CategoryDTO Category { get; set; }
+    public List<CashierDTO> Cashiers { get; set; }
+    public OrderProductDTO OrderProduct { get; set; }
 }
